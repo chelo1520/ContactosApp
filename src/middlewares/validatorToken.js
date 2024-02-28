@@ -22,7 +22,6 @@ export default function validatorToken(req, res, next){
 
       req.usuario = user
 
-      console.log("Token valido!");
       next()
     }) 
   } catch (error) {
