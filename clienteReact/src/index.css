@@ -1,0 +1,34 @@
+body{
+  background-color: rgb(41, 40, 40);
+  color: white;
+  background-color: rgb(146, 200, 252);
+}
+
+.links{
+  border-bottom: 1px solid transparent ;
+  padding: 2px;
+}
+
+.links:hover{
+  border-bottom: 1px solid black;
+}
+
+
+#title{
+  height: calc(100vh - 62px);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.add-contact{
+  height: calc(100vh - 62px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  max-height: 300px;
+}
