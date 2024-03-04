@@ -23,7 +23,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Route path='/contactos' element={<Contactos/>}></Route>
                 <Route path='/contactosForm' element={<ContactosForm/>}></Route>
                 <Route path='/contactosForm/:id' element={<ContactosForm/>}></Route>
-                <Route path='/profile' element={<h1>Perfil</h1>}></Route>
             </Route>
           </Routes>
       </BrowserRouter>

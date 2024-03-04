@@ -6,7 +6,6 @@ import {
   eliminarContacto,
   actualizarContacto
 } from "../controllers/contactos.js";
-
 import validatorToken from "../middlewares/ValidatorToken.js";
 
 const routeC = Router()

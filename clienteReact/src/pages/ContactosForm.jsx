@@ -2,17 +2,29 @@ import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import { contactoCreate, obtenerContacto, updateContacto} from "../api/axiosFetch"
 import { useParams } from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 export const ContactosForm = () => {
 
-  const {formState: {errors}, register, handleSubmit} = useForm()
+  const {formState: {errors}, register, handleSubmit, setValue} = useForm()
   const navigate = useNavigate()
   const params = useParams()
   const [errores, setErrores] = useState([])
 
   
+  useEffect(() => {
+    async function contactoCargado() {
+      if(params.id){
+        const contacto = await obtenerContacto(params.id)
+        setValue(`numero`, contacto.data.numero)
+        setValue(`nombre`, contacto.data.nombre)
+      }
+    }
+    contactoCargado()
+  }, [])
+  
+
 
   const contactoSave = async(value) => {
     try {
@@ -36,7 +48,7 @@ export const ContactosForm = () => {
     <div  className="add-contact">
     <div className="container">
       <h1 className="mb-4">
-        {params.id ? "Actualizar contacto" : "Agregar contacto"}
+        {params.id ? "Editar contacto" : "Agregar contacto"}
       </h1>
       <form onSubmit={handleSubmit(contactoSave)}>
         <div className="mb-3">
@@ -68,7 +80,7 @@ export const ContactosForm = () => {
         </div>
 
         <button type="submit" className="btn btn-primary">
-          {params.id ? "Actualizar" : "Agregar"}
+          {params.id ? "Editar" : "Agregar"}
         </button>
       </form>
     </div>

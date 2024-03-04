@@ -1,5 +1,4 @@
 body{
-  background-color: rgb(41, 40, 40);
   color: white;
   background-color: rgb(146, 200, 252);
 }
@@ -31,4 +30,8 @@ body{
 
 .card{
   max-height: 300px;
+}
+
+#miscontactos{
+  margin-top: 62px;
 }
